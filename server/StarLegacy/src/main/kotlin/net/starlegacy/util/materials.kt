@@ -41,6 +41,23 @@ val Material.isCopperBlock: Boolean get() =
 	this == Material.WAXED_WEATHERED_CUT_COPPER ||
 	this == Material.WAXED_OXIDIZED_CUT_COPPER
 
+val Material.isDeepslateBlock: Boolean get() =
+	this == Material.CHISELED_DEEPSLATE         ||
+	this == Material.CRACKED_DEEPSLATE_BRICKS	||
+	this == Material.CRACKED_DEEPSLATE_TILES	||
+	this == Material.DEEPSLATE_BRICK_SLAB 		||
+	this == Material.DEEPSLATE_BRICK_STAIRS		||
+	this == Material.DEEPSLATE_BRICK_WALL		||
+	this == Material.DEEPSLATE_TILE_SLAB		||
+	this == Material.DEEPSLATE_TILE_STAIRS 		||
+	this == Material.DEEPSLATE_TILE_STAIRS		||
+	this == Material.DEEPSLATE_TILE_WALL		||
+	this == Material.DEEPSLATE_TILES			||
+	this == Material.POLISHED_DEEPSLATE_SLAB	||
+	this == Material.POLISHED_DEEPSLATE_STAIRS	||
+	this == Material.POLISHED_DEEPSLATE_WALL
+ 
+
 val Material.isLava: Boolean get() = this == Material.LAVA
 
 val Material.isWater: Boolean get() = this == Material.WATER
