@@ -40,23 +40,24 @@ val Material.isCopperBlock: Boolean get() =
 	this == Material.WAXED_EXPOSED_CUT_COPPER   ||
 	this == Material.WAXED_WEATHERED_CUT_COPPER ||
 	this == Material.WAXED_OXIDIZED_CUT_COPPER
+//val COPPER_TYPES = getMatchingMaterials{ Material.isCopperBlock }
 
-val Material.isDeepslateBlock: Boolean get() =
-	this == Material.CHISELED_DEEPSLATE         ||
-	this == Material.CRACKED_DEEPSLATE_BRICKS	||
-	this == Material.CRACKED_DEEPSLATE_TILES	||
-	this == Material.DEEPSLATE_BRICK_SLAB 		||
-	this == Material.DEEPSLATE_BRICK_STAIRS		||
-	this == Material.DEEPSLATE_BRICK_WALL		||
-	this == Material.DEEPSLATE_TILE_SLAB		||
-	this == Material.DEEPSLATE_TILE_STAIRS 		||
-	this == Material.DEEPSLATE_TILE_STAIRS		||
-	this == Material.DEEPSLATE_TILE_WALL		||
-	this == Material.DEEPSLATE_TILES			||
-	this == Material.POLISHED_DEEPSLATE_SLAB	||
-	this == Material.POLISHED_DEEPSLATE_STAIRS	||
-	this == Material.POLISHED_DEEPSLATE_WALL
- 
+//val Material.isDeepslateBlock: Boolean get() =
+//	this == Material.CHISELED_DEEPSLATE         ||
+//	this == Material.CRACKED_DEEPSLATE_BRICKS	||
+//	this == Material.CRACKED_DEEPSLATE_TILES	||
+//	this == Material.DEEPSLATE_BRICK_SLAB 		||
+//	this == Material.DEEPSLATE_BRICK_STAIRS		||
+//	this == Material.DEEPSLATE_BRICK_WALL		||
+//	this == Material.DEEPSLATE_TILE_SLAB		||
+//	this == Material.DEEPSLATE_TILE_STAIRS 		||
+//	this == Material.DEEPSLATE_TILE_WALL		||
+//	this == Material.DEEPSLATE_TILES			||
+//	this == Material.POLISHED_DEEPSLATE_SLAB	||
+//	this == Material.POLISHED_DEEPSLATE_STAIRS	||
+//	this == Material.POLISHED_DEEPSLATE_WALL
+//val DEEPSLATE_TYPES = getMatchingMaterials(Material.isDeepslateBlock)
+
 
 val Material.isLava: Boolean get() = this == Material.LAVA
 
@@ -110,6 +111,9 @@ val Material.isNetherWart: Boolean get() = NETHER_WART_TYPES.contains(this)
 
 val CONCRETE_POWDER_TYPES = getMatchingMaterials { it.name.endsWith("_CONCRETE_POWDER") }
 val Material.isConcretePowder: Boolean get() = CONCRETE_POWDER_TYPES.contains(this)
+
+val CONCRETE_TYPES = getMatchingMaterials { it.name.endsWith("_CONCRETE") }
+val Material.isConcrete: Boolean get() = CONCRETE_TYPES.contains(this)
 
 val CONCRETE_TYPES = getMatchingMaterials { it.name.endsWith("_CONCRETE") }
 val Material.isConcrete: Boolean get() = CONCRETE_TYPES.contains(this)
