@@ -23,7 +23,6 @@ import net.starlegacy.util.STAIR_TYPES
 import net.starlegacy.util.TRAPDOOR_TYPES
 import net.starlegacy.util.WALL_TYPES
 import net.starlegacy.util.WOOL_TYPES
-import org.bukkit.Material
 import org.bukkit.Material.ANVIL
 import org.bukkit.Material.BELL
 import org.bukkit.Material.BOOKSHELF
@@ -87,6 +86,19 @@ import org.bukkit.Material.WAXED_EXPOSED_COPPER
 import org.bukkit.Material.WAXED_OXIDIZED_COPPER
 import org.bukkit.Material.WAXED_WEATHERED_COPPER
 import org.bukkit.Material.WEATHERED_COPPER
+import org.bukkit.Material.CHISELED_DEEPSLATE
+import org.bukkit.Material.CRACKED_DEEPSLATE_BRICKS
+import org.bukkit.Material.CRACKED_DEEPSLATE_TILES
+import org.bukkit.Material.DEEPSLATE_BRICK_SLAB
+import org.bukkit.Material.DEEPSLATE_BRICK_STAIRS
+import org.bukkit.Material.DEEPSLATE_BRICK_WALL
+import org.bukkit.Material.DEEPSLATE_TILE_SLAB
+import org.bukkit.Material.DEEPSLATE_TILE_STAIRS
+import org.bukkit.Material.DEEPSLATE_TILE_WALL
+import org.bukkit.Material.DEEPSLATE_TILES
+import org.bukkit.Material.POLISHED_DEEPSLATE_SLAB
+import org.bukkit.Material.POLISHED_DEEPSLATE_STAIRS
+import org.bukkit.Material.POLISHED_DEEPSLATE_WALL
 
 val FLYABLE_BLOCKS: EnumSet<Material> = mutableSetOf(
 	JUKEBOX, // ship computer
@@ -161,6 +173,20 @@ val FLYABLE_BLOCKS: EnumSet<Material> = mutableSetOf(
 	WAXED_EXPOSED_COPPER,
 	WAXED_WEATHERED_COPPER,
 	WAXED_OXIDIZED_COPPER,
+
+	CHISELED_DEEPSLATE,
+	CRACKED_DEEPSLATE_BRICKS,
+	CRACKED_DEEPSLATE_TILES,
+	DEEPSLATE_BRICK_SLAB,
+	DEEPSLATE_BRICK_STAIRS,
+	DEEPSLATE_BRICK_WALL,
+	DEEPSLATE_TILE_SLAB,
+	DEEPSLATE_TILE_STAIRS,
+	DEEPSLATE_TILE_WALL,
+	DEEPSLATE_TILES,
+	POLISHED_DEEPSLATE_SLAB,
+	POLISHED_DEEPSLATE_STAIRS,
+	POLISHED_DEEPSLATE_WALL,
 
 	SHROOMLIGHT,
 	BELL,
