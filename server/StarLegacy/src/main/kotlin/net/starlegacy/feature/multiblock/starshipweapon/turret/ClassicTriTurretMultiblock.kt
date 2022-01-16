@@ -9,7 +9,7 @@ import net.starlegacy.feature.starship.subsystem.weapon.secondary.TriTurretWeapo
 import net.starlegacy.util.Vec3i
 import org.bukkit.block.BlockFace
 
-sealed class TriTurretMultiblock : TurretMultiblock() {
+sealed class ClassicTriTurretMultiblock : TurretMultiblock() {
 	override fun createSubsystem(starship: ActiveStarship, pos: Vec3i, face: BlockFace): TurretWeaponSubsystem {
 		return TriTurretWeaponSubsystem(starship, pos, getFacing(pos, starship), this)
 	}
@@ -129,12 +129,12 @@ sealed class TriTurretMultiblock : TurretMultiblock() {
 	}
 }
 
-object TopTriTurretMultiblock : TriTurretMultiblock() {
+object TopClassicTriTurretMultiblock : ClassicTriTurretMultiblock() {
 	override fun getYFactor(): Int = 1
 	override fun getPilotOffset(): Vec3i = Vec3i(+0, +3, +2)
 }
 
-object BottomTriTurretMultiblock : TriTurretMultiblock() {
+object BottomClassicTriTurretMultiblock : ClassicTriTurretMultiblock() {
 	override fun getYFactor(): Int = -1
 	override fun getPilotOffset(): Vec3i = Vec3i(+0, -4, +2)
 }

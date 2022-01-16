@@ -1,7 +1,7 @@
 package net.starlegacy.feature.starship.subsystem.weapon.secondary
 
 import net.horizonsend.ion.server.commands.QuickBalance
-import net.starlegacy.feature.multiblock.starshipweapon.turret.TriTurretMultiblock
+import net.starlegacy.feature.multiblock.starshipweapon.turret.ClassicTriTurretMultiblock
 import net.starlegacy.feature.starship.active.ActiveStarship
 import net.starlegacy.feature.starship.subsystem.weapon.TurretWeaponSubsystem
 import net.starlegacy.feature.starship.subsystem.weapon.interfaces.HeavyWeaponSubsystem
@@ -12,7 +12,7 @@ class TriTurretWeaponSubsystem(
 	ship: ActiveStarship,
 	pos: Vec3i,
 	face: BlockFace,
-	override val multiblock: TriTurretMultiblock
+	override val multiblock: ClassicTriTurretMultiblock
 ) : TurretWeaponSubsystem(ship, pos, face),
 	HeavyWeaponSubsystem {
 	override val inaccuracyRadians get() = Math.toRadians(QuickBalance.getBalancedValue("TriTurretInaccuracy"))

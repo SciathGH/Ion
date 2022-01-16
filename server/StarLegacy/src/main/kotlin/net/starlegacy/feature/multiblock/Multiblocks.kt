@@ -39,10 +39,10 @@ import net.starlegacy.feature.multiblock.starshipweapon.misc.PointDefenseStarshi
 import net.starlegacy.feature.multiblock.starshipweapon.misc.PointDefenseStarshipWeaponMultiblockTop
 import net.starlegacy.feature.multiblock.starshipweapon.turret.BottomHeavyTurretMultiblock
 import net.starlegacy.feature.multiblock.starshipweapon.turret.BottomLightTurretMultiblock
-import net.starlegacy.feature.multiblock.starshipweapon.turret.BottomTriTurretMultiblock
+import net.starlegacy.feature.multiblock.starshipweapon.turret.BottomClassicTriTurretMultiblock
 import net.starlegacy.feature.multiblock.starshipweapon.turret.TopHeavyTurretMultiblock
 import net.starlegacy.feature.multiblock.starshipweapon.turret.TopLightTurretMultiblock
-import net.starlegacy.feature.multiblock.starshipweapon.turret.TopTriTurretMultiblock
+import net.starlegacy.feature.multiblock.starshipweapon.turret.TopClassicTriTurretMultiblock
 import net.starlegacy.util.msg
 import net.starlegacy.util.time
 import net.starlegacy.util.timing
@@ -101,8 +101,8 @@ object Multiblocks : SLComponent() {
 			BottomLightTurretMultiblock,
 			TopHeavyTurretMultiblock,
 			BottomHeavyTurretMultiblock,
-			TopTriTurretMultiblock,
-			BottomTriTurretMultiblock,
+			TopClassicTriTurretMultiblock,
+			BottomClassicTriTurretMultiblock,
 			HorizontalRocketStarshipWeaponMultiblock,
 			UpwardRocketStarshipWeaponMultiblock,
 			DownwardRocketStarshipWeaponMultiblock,
