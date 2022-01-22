@@ -1,6 +1,14 @@
 plugins {
-	kotlin("kapt")
+	kotlin("jvm") version "1.6.10"
+	kotlin("kapt") version "1.6.10"
 	kotlin("plugin.serialization") version "1.6.10"
+	id("com.github.johnrengelman.shadow") version "7.1.2"
+}
+
+repositories {
+	maven("https://papermc.io/repo/repository/maven-public/")
+	maven("https://repo.aikar.co/content/groups/aikar/")
+	mavenCentral()
 }
 
 dependencies {
@@ -12,6 +20,25 @@ dependencies {
 	implementation("net.dv8tion:JDA:5.0.0-alpha.4")
 }
 
-tasks.shadowJar {
-	archiveFileName.set("../../../build/IonProxy.jar")
+tasks{
+	compileJava {
+		options.compilerArgs.add("-parameters")
+		options.isFork = true
+	}
+
+	compileKotlin {
+		kotlinOptions.javaParameters = true
+	}
+
+	shadowJar {
+		archiveFileName.set("../../../build/IonProxy.jar")
+	}
+
+	create("ionBuild") {
+		dependsOn("shadowJar")
+	}
+}
+
+java {
+	toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
