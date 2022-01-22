@@ -16,8 +16,10 @@ dependencies {
 
 	kapt("com.velocitypowered:velocity-api:3.1.1")
 
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 	implementation("co.aikar:acf-velocity:0.5.1-SNAPSHOT")
 	implementation("net.dv8tion:JDA:5.0.0-alpha.4")
+	implementation("org.litote.kmongo:kmongo:4.4.0")
 }
 
 tasks{

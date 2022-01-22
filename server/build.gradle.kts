@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-	compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT") // This has to be here otherwise it tries to use Bukkit 1.7.10... thanks Dynmap.
+	compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT") // Dynmap includes Bukkit causing conflicts
 	paperDevBundle("1.18.1-R0.1-SNAPSHOT")
 
 	compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.2.8")
@@ -35,17 +35,18 @@ dependencies {
 	}
 
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-	implementation("org.litote.kmongo:kmongo:4.4.0")
-	implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
 	implementation("com.github.stefvanschie.inventoryframework:IF:0.10.3")
 	implementation("com.daveanthonythomas.moshipack:moshipack:1.0.1")
+	implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
 	implementation("com.googlecode.cqengine:cqengine:3.6.0")
-	implementation("com.github.jkcclemens:khttp:0.1.0")
-	implementation("net.wesjd:anvilgui:1.5.2-SNAPSHOT") // 1.5.3-SNAPSHOT is broken
-	implementation("net.wesjd:anvilgui-1_18_R1:1.5.3-SNAPSHOT")
 	implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
+	implementation("com.github.jkcclemens:khttp:0.1.0")
+	implementation("org.litote.kmongo:kmongo:4.4.0")
 	implementation("redis.clients:jedis:3.7.1") // Newer version changed stuff, I am too lazy to fix it.
+
+	implementation("net.wesjd:anvilgui-1_18_R1:1.5.3-SNAPSHOT")
+	implementation("net.wesjd:anvilgui:1.5.2-SNAPSHOT") // 1.5.3-SNAPSHOT is broken
 }
 
 sourceSets {
