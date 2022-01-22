@@ -28,11 +28,8 @@ dependencies {
 	compileOnly("com.sk89q.worldedit:worldedit-bukkit:7.2.8")
 	compileOnly("net.citizensnpcs:citizens:2.0.27-SNAPSHOT")
 	compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
+	compileOnly("us.dynmap:dynmap-api:3.1")
 	compileOnly("net.luckperms:api:5.3")
-
-	compileOnly("us.dynmap:dynmap-api:3.1") {
-		exclude("org.bukkit:bukkit:1.7.10")
-	}
 
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 	implementation("com.github.stefvanschie.inventoryframework:IF:0.10.3")
