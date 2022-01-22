@@ -3,10 +3,6 @@ plugins {
 	kotlin("plugin.serialization") version "1.6.10"
 }
 
-repositories {
-	maven("https://nexus.velocitypowered.com/repository/maven-public/")
-}
-
 dependencies {
 	compileOnly("com.velocitypowered:velocity-api:3.1.1")
 

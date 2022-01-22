@@ -9,6 +9,8 @@ allprojects {
 	apply(plugin = "com.github.johnrengelman.shadow")
 
 	repositories {
+		maven("https://papermc.io/repo/repository/maven-public/")
+
 		maven { url = uri("https://repo.aikar.co/content/groups/aikar/"); content{
 			excludeModule("org.bukkit", "bukkit")
 			excludeModule("net.wesjd", "anvilgui")

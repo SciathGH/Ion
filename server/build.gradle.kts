@@ -4,7 +4,6 @@ plugins {
 }
 
 repositories {
-	maven { url = uri("https://papermc.io/repo/repository/maven-public/") }
 	maven { url = uri("https://nexus.scarsz.me/content/groups/public/") }
 	maven { url = uri("https://repo.dmulloy2.net/repository/public/") }
 	maven { url = uri("https://www.myget.org/F/egg82-java/maven/") }
