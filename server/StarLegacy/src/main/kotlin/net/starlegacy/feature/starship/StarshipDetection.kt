@@ -235,6 +235,7 @@ object StarshipDetection : SLComponent() {
 	fun isInventory(material: Material): Boolean {
 		return when (material) {
 			Material.CHEST,
+			Material.BARREL,
 			Material.TRAPPED_CHEST,
 			Material.HOPPER,
 			Material.DISPENSER,
