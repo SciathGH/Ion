@@ -8,6 +8,7 @@ plugins {
 repositories {
 	maven("https://repo.mikeprimm.com/") // Has to be first because of Dynmap
 
+	maven("https://oss.sonatype.org/content/repositories/snapshots/")
 	maven("https://repo.codemc.io/repository/maven-snapshots/")
 	maven("https://papermc.io/repo/repository/maven-public/")
 	maven("https://nexus.scarsz.me/content/groups/public/")
@@ -33,6 +34,7 @@ dependencies {
 
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
 	implementation("com.github.stefvanschie.inventoryframework:IF:0.10.3")
+	implementation("net.kyori:adventure-text-minimessage:4.10.0-SNAPSHOT")
 	implementation("com.daveanthonythomas.moshipack:moshipack:1.0.1")
 	implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
