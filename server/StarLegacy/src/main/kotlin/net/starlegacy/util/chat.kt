@@ -7,21 +7,28 @@ import org.bukkit.Bukkit
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
+@Deprecated("Use Adventure w/ MiniMessage")
 infix fun CommandSender.msg(text: String) = this.sendMessage(text.colorize())
 
+@Deprecated("Use Adventure w/ MiniMessage")
 infix fun CommandSender.msg(text: TextComponent) = sendMessage(text)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 infix fun Player.action(text: TextComponent) = action(text.toLegacyText())
 
+@Deprecated("Use Adventure w/ MiniMessage")
 infix fun Player.action(text: String) = sendActionBar(text.colorize())
 
+@Deprecated("Use Adventure w/ MiniMessage")
 infix fun Player.actionAndMsg(text: String) {
 	this.action(text)
 	this.msg(text)
 }
 
+@Deprecated("Use Adventure w/ MiniMessage")
 infix fun Player.title(title: Title) = sendTitle(title)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun Player.title(
 	title: TextComponent = "".text(),
 	subtitle: TextComponent = "".text(),
@@ -32,18 +39,25 @@ fun Player.title(
 	sendTitle(title.toLegacyText(), subtitle.toLegacyText(), fadeIn, stay, fadeOut)
 }
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun broadcastMessage(text: TextComponent) = Bukkit.broadcast(text)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun broadcastGlobal(message: String) = Notify.online(message)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun execConsoleCmd(cmd: String): Boolean = Bukkit.dispatchCommand(Bukkit.getConsoleSender(), cmd)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun String.colorize(): String = ChatColor.translateAlternateColorCodes('&', this)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun String.stripColor(): String = ChatColor.stripColor(this)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun String.fromLegacy(): TextComponent = TextComponent(*TextComponent.fromLegacyText(this.colorize()))
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun <T> Iterable<T>.joinToText(
 	commaColor: SLTextStyle = SLTextStyle.GRAY,
 	transform: (T) -> TextComponent = { toString().fromLegacy() }
@@ -58,16 +72,22 @@ fun <T> Iterable<T>.joinToText(
 	return component
 }
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun String.isAlphanumeric() = matches("^[a-zA-Z0-9]*$".toRegex())
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun String.text(): TextComponent = TextComponent(this)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 operator fun TextComponent.plus(that: TextComponent) = apply { addExtra(that) }
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun String.style(style: SLTextStyle) = text().style(style)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun TextComponent.style(style: SLTextStyle): TextComponent = apply { color = style.wrappedColor }
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun TextComponent.black() = style(SLTextStyle.BLACK)
 fun TextComponent.darkBlue() = style(SLTextStyle.DARK_BLUE)
 fun TextComponent.darkGreen() = style(SLTextStyle.DARK_GREEN)
@@ -91,6 +111,7 @@ fun TextComponent.underline() = apply { isUnderlined = true }
 fun TextComponent.italic() = apply { isItalic = true }
 fun TextComponent.resetColor() = style(SLTextStyle.RESET)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 fun black(s: String) = s.style(SLTextStyle.BLACK)
 fun darkBlue(s: String) = s.style(SLTextStyle.DARK_BLUE)
 fun darkGreen(s: String) = s.style(SLTextStyle.DARK_GREEN)
@@ -110,6 +131,7 @@ fun white(s: String) = s.style(SLTextStyle.WHITE)
 fun obfuscated(s: String) = s.style(SLTextStyle.OBFUSCATED)
 fun resetColor(s: String) = s.style(SLTextStyle.RESET)
 
+@Deprecated("Use Adventure w/ MiniMessage")
 enum class SLTextStyle(val wrappedColor: ChatColor) {
 	BLACK(ChatColor.BLACK),
 	DARK_BLUE(ChatColor.DARK_BLUE),
