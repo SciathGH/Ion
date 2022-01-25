@@ -3,8 +3,11 @@ package net.horizonsend.ion.proxy
 import co.aikar.commands.VelocityCommandManager
 import com.google.inject.Inject
 import com.velocitypowered.api.event.EventTask
+import com.velocitypowered.api.event.ResultedEvent.ComponentResult
 import com.velocitypowered.api.event.Subscribe
+import com.velocitypowered.api.event.connection.LoginEvent
 import com.velocitypowered.api.event.connection.PreLoginEvent
+import com.velocitypowered.api.event.connection.PreLoginEvent.PreLoginComponentResult
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent
 import com.velocitypowered.api.event.proxy.ProxyPingEvent
 import com.velocitypowered.api.plugin.Plugin
@@ -56,7 +59,13 @@ class Ion @Inject constructor(val server: ProxyServer, private val logger: Logge
 	@Subscribe
 	fun onPreLoginEvent(event: PreLoginEvent): EventTask = EventTask.async {
 		if (event.connection.protocolVersion.protocol != 757) event.result =
-			PreLoginEvent.PreLoginComponentResult.denied(miniMessage().deserialize("<red><bold>Sorry, only 1.18(.1) clients can play on Horizon's End!"))
+			PreLoginComponentResult.denied(miniMessage().deserialize("<red><bold>Sorry, only 1.18(.1) clients can play on Horizon's End!"))
+	}
+
+	@Subscribe
+	fun onLoginEvent(event: LoginEvent): EventTask = EventTask.async {
+		if (server.playerCount > 30 && !event.player.hasPermission("ion.maxPlayerBypass")) event.result =
+			ComponentResult.denied(miniMessage().deserialize("<red><bold>Sorry, the server is full!"))
 	}
 
 	@Subscribe
