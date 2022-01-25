@@ -5,9 +5,14 @@ import com.google.inject.Inject
 import com.velocitypowered.api.event.EventTask
 import com.velocitypowered.api.event.Subscribe
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent
+import com.velocitypowered.api.event.proxy.ProxyPingEvent
 import com.velocitypowered.api.plugin.Plugin
 import com.velocitypowered.api.plugin.annotation.DataDirectory
 import com.velocitypowered.api.proxy.ProxyServer
+import com.velocitypowered.api.proxy.server.ServerPing
+import com.velocitypowered.api.proxy.server.ServerPing.Players
+import com.velocitypowered.api.proxy.server.ServerPing.SamplePlayer
+import com.velocitypowered.api.proxy.server.ServerPing.Version
 import java.nio.file.Path
 import kotlin.io.path.createDirectories
 import kotlin.io.path.exists
@@ -29,6 +34,7 @@ import net.horizonsend.ion.proxy.commands.Move
 import net.horizonsend.ion.proxy.commands.Server
 import net.horizonsend.ion.proxy.commands.Unlink
 import net.horizonsend.ion.proxy.database.MongoManager
+import net.kyori.adventure.text.minimessage.MiniMessage.miniMessage
 import org.slf4j.Logger
 
 @Plugin(id = "ion", name = "Ion (Proxy)", version = "1.0.0", description = "Ion (Proxy)", authors = ["PeterCrawley"], url = "https://horizonsend.net")
@@ -44,6 +50,20 @@ class Ion @Inject constructor(val server: ProxyServer, private val logger: Logge
 
 		var jda: JDA? = null
 			private set
+	}
+
+	@Subscribe
+	fun onProxyPingEvent(event: ProxyPingEvent): EventTask = EventTask.async {
+		event.ping = ServerPing(
+			Version(757, "1.18.1"),
+			Players(server.playerCount, 30, server.allPlayers.map { SamplePlayer(it.username, it.uniqueId) }),
+			if (event.connection.protocolVersion.protocol == 757) {
+				miniMessage().deserialize("<gold><bold>Horizon's End</bold><gray> - <red><bold>Spaceships</bold><gray>, <green><bold>Planets</bold><gray>, <blue><bold>Combat</bold><gray>\nCommunity ran continuation of Star Legacy")
+			} else {
+				miniMessage().deserialize("<red><bold>Sorry, only 1.18.1 clients can play on Horizon's End!")
+			},
+			null
+		)
 	}
 
 	@Subscribe
