@@ -4,6 +4,7 @@ import co.aikar.commands.VelocityCommandManager
 import com.google.inject.Inject
 import com.velocitypowered.api.event.EventTask
 import com.velocitypowered.api.event.Subscribe
+import com.velocitypowered.api.event.connection.PreLoginEvent
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent
 import com.velocitypowered.api.event.proxy.ProxyPingEvent
 import com.velocitypowered.api.plugin.Plugin
@@ -53,6 +54,12 @@ class Ion @Inject constructor(val server: ProxyServer, private val logger: Logge
 	}
 
 	@Subscribe
+	fun onPreLoginEvent(event: PreLoginEvent): EventTask = EventTask.async {
+		if (event.connection.protocolVersion.protocol != 757) event.result =
+			PreLoginEvent.PreLoginComponentResult.denied(miniMessage().deserialize("<red><bold>Sorry, only 1.18(.1) clients can play on Horizon's End!"))
+	}
+
+	@Subscribe
 	fun onProxyPingEvent(event: ProxyPingEvent): EventTask = EventTask.async {
 		event.ping = ServerPing(
 			Version(757, "1.18.1"),
@@ -60,7 +67,7 @@ class Ion @Inject constructor(val server: ProxyServer, private val logger: Logge
 			if (event.connection.protocolVersion.protocol == 757) {
 				miniMessage().deserialize("<gold><bold>Horizon's End</bold><gray> - <red><bold>Spaceships</bold><gray>, <green><bold>Planets</bold><gray>, <blue><bold>Combat</bold><gray>\nCommunity ran continuation of Star Legacy")
 			} else {
-				miniMessage().deserialize("<red><bold>Sorry, only 1.18.1 clients can play on Horizon's End!")
+				miniMessage().deserialize("<red><bold>Sorry, only 1.18(.1) clients can play on Horizon's End!")
 			},
 			null
 		)
