@@ -76,11 +76,7 @@ class Ion @Inject constructor(val server: ProxyServer, private val logger: Logge
 		event.ping = ServerPing(
 			Version(757, "1.18.1"),
 			Players(server.playerCount, 30, server.allPlayers.map { SamplePlayer(it.username, it.uniqueId) }),
-			if (event.connection.protocolVersion.protocol == 757) {
-				miniMessage().deserialize("<gold><bold>Horizon's End</bold><gray> - <italic>A continuation of Star Legacy.\n${motds.random()}")
-			} else {
-				miniMessage().deserialize("<red><bold>Sorry, only 1.18(.1) clients can play on Horizon's End!")
-			},
+			miniMessage().deserialize("<gold><bold>Horizon's End</bold><gray> - <italic>A continuation of Star Legacy.\n${motds.random()}"),
 			null
 		)
 	}
