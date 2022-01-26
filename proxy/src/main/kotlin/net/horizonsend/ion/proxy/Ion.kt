@@ -76,7 +76,7 @@ class Ion @Inject constructor(val server: ProxyServer, private val logger: Logge
 		event.ping = ServerPing(
 			Version(757, "1.18.1"),
 			Players(server.playerCount, 30, server.allPlayers.map { SamplePlayer(it.username, it.uniqueId) }),
-			miniMessage().deserialize("<gold><bold>Horizon's End</bold><gray> - <italic>A continuation of Star Legacy.\n${motds.random()}"),
+			miniMessage().deserialize("<gold><bold>Horizon's End</bold><gray> - <italic>A continuation of Star Legacy.<reset>\n${motds.random()}"),
 			null
 		)
 	}
