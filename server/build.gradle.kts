@@ -39,12 +39,12 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect:1.6.0")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
 	implementation("com.googlecode.cqengine:cqengine:3.6.0")
+	implementation("net.wesjd:anvilgui:1.5.3-SNAPSHOT")
 	implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
 	implementation("com.github.jkcclemens:khttp:0.1.0")
 	implementation("org.litote.kmongo:kmongo:4.4.0")
 	implementation("redis.clients:jedis:3.7.1") // Newer version changed stuff, I am too lazy to fix it.
 
-	implementation("net.wesjd:anvilgui:1.5.3-SNAPSHOT") // 1.5.3-SNAPSHOT is broken
 }
 
 sourceSets {
