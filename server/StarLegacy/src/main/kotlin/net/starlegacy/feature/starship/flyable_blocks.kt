@@ -87,6 +87,12 @@ import org.bukkit.Material.WAXED_EXPOSED_COPPER
 import org.bukkit.Material.WAXED_OXIDIZED_COPPER
 import org.bukkit.Material.WAXED_WEATHERED_COPPER
 import org.bukkit.Material.WEATHERED_COPPER
+import org.bukkit.Material.SMOKER
+import org.bukkit.Material.SOUL_TORCH
+import org.bukkit.Material.SOUL_WALL_TORCH
+import org.bukkit.Material.SOUL_LANTERN
+import org.bukkit.Material.LANTERN
+import org.bukkit.Material.CHAIN
 
 val FLYABLE_BLOCKS: EnumSet<Material> = mutableSetOf(
 	JUKEBOX, // ship computer
@@ -165,6 +171,12 @@ val FLYABLE_BLOCKS: EnumSet<Material> = mutableSetOf(
 	SHROOMLIGHT,
 	BELL,
 	GRINDSTONE,
+	SMOKER,
+	SOUL_TORCH,
+	SOUL_WALL_TORCH,
+	SOUL_LANTERN,
+	LANTERN,
+	CHAIN,
 ).also {
 	it.addAll(CONCRETE_TYPES)
 	it.addAll(SLAB_TYPES)
