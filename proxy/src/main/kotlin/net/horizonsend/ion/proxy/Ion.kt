@@ -56,7 +56,7 @@ class Ion @Inject constructor(val server: ProxyServer, private val logger: Logge
 		var jda: JDA? = null
 			private set
 
-		val motds: Set<String> = URL("https://raw.githubusercontent.com/HorizonsEndMC/MOTDs/main/MOTD").readText().split("\n").toSet()
+		val motds: Set<String> = URL("https://raw.githubusercontent.com/HorizonsEndMC/MOTDs/main/MOTD").readText().split("\n").filter { it.isNotEmpty() }.toSet()
 	}
 
 	@Subscribe
