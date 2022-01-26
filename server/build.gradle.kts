@@ -44,7 +44,6 @@ dependencies {
 	implementation("org.litote.kmongo:kmongo:4.4.0")
 	implementation("redis.clients:jedis:3.7.1") // Newer version changed stuff, I am too lazy to fix it.
 
-	implementation("net.wesjd:anvilgui-1_18_R1:1.5.3-SNAPSHOT")
 	implementation("net.wesjd:anvilgui:1.5.3-SNAPSHOT") // 1.5.3-SNAPSHOT is broken
 }
 
